@@ -1,0 +1,41 @@
+BallGame:
+
+MainGame
+	init()
+		initBalls()
+		initRenderers()
+	run()
+		gameLoop()
+			draw()
+			processInput()
+	
+
+Ball
+	: radius, mass, position, velocity, color, textureID, cell, placeInCell
+
+BallRenderer
+	renderBatch()
+		initShaders
+	: GLSLprogram
+
+BallController
+	updateBalls()
+		moveBalls()
+		collideWithWall()
+		collideInCell()
+			collideWithBall()
+	onMouseDown()
+	onMouseMove()
+	onMouseUp()
+	getGravity()
+
+Cell
+	: vector<Ball>
+	
+Grid
+	addBall(ball)
+	addBall(ball, cell)
+	getCell(pos)
+	getCell(x, y)
+	:vector<Cell> cellSize, width, height, numXCells, numYCells
+	
